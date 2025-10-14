@@ -1,29 +1,77 @@
-# E-commerce Product Recommender with LLM Explanations
+# Full-Stack E-commerce Product Recommender 🛍️
 
-## Objective
-This project is a fully functional backend API that provides personalized product recommendations based on user behavior. It combines a content-based recommendation engine with a Large Language Model (LLM) to generate user-friendly explanations for why each product is recommended.
+This project is a complete, full-stack application that provides intelligent, personalized product recommendations. It features a Streamlit web interface, a FastAPI backend, a hybrid recommendation engine, and leverages a Large Language Model (LLM) for generating dynamic, human-like explanations and product summaries.
 
-## Demo Video
-*A brief video demonstrating the project setup and API in action.*
+---
 
-**(Link to your Loom or YouTube video will go here)**
+## 🚀 Live Demo
 
-## Tech Stack
-* **Backend:** Python, FastAPI
-* **Recommendation Engine:** Pandas, Scikit-learn (TF-IDF & Cosine Similarity)
-* **Database:** SQLite
-* **LLM Integration:** Ollama with Llama 3 (8B model)
-* **API Server:** Uvicorn
+*(This is where you would embed a GIF or link to a short Loom/YouTube video of your Streamlit app in action)*
 
-## Features
-* **Content-Based Recommendations:** Suggests products based on textual similarity of their name, category, and description.
-* **LLM-Powered Explanations:** For each recommendation, a local LLM generates a unique, human-readable explanation.
-* **RESTful API:** A single, easy-to-use endpoint to fetch recommendations for any user.
-* **Persistent Storage:** User interactions and product data are stored in a SQLite database.
 
-## Setup & Installation
+---
+
+## Key Features
+
+* **Interactive Web Interface:** A user-friendly frontend built with Streamlit to visualize recommendations.
+* **Hybrid Recommendation Engine:** Combines two strategies for smart suggestions:
+    * **LLM-Powered Query Expansion:** Uses an LLM to brainstorm complementary product categories (e.g., "helmet" for "cycling shorts").
+    * **Content-Based Filtering:** Uses TF-IDF and Cosine Similarity to find similar products while filtering out exact duplicates.
+* **AI-Powered Explanations & Summaries:** Leverages the Llama 3.1 model via the Groq API to:
+    * Generate a unique, friendly explanation for each recommendation.
+    * Summarize long product descriptions into concise, appealing blurbs.
+* **Decoupled Architecture:** A robust backend API built with FastAPI serves the data, allowing the frontend to remain lightweight and responsive.
+
+---
+
+## Technology Stack
+
+| Component | Technology/Library |
+| :--- | :--- |
+| **Frontend** | Streamlit |
+| **Backend API** | Python, FastAPI, Uvicorn |
+| **Recommendation Engine** | Pandas, Scikit-learn, Inflect |
+| **LLM Integration** | Groq API (Llama 3.1) |
+| **Database** | SQLite |
+
+---
+
+## Setup & Run
 
 **1. Clone the repository:**
 ```bash
 git clone <your-repository-url>
 cd product-recommender
+
+**2  Create and activate a virtual environment:**
+```bash
+python -m venv venv
+# On Windows
+.\venv\Scripts\Activate.ps1
+# On macOS/Linux
+source venv/bin/activate
+
+**3. Install dependencies:**
+```bash
+pip install -r requirements.txt
+
+**4. Add API Key:**
+Get a free API key from Groq.
+Paste the key into the API_KEY variable inside api/llm_handler.py
+
+**5. Seed the database:**
+python seed_database.py
+
+**6. Run the Application:**
+Terminal 1 (Backend):
+Bash
+python -m uvicorn api.main:app --reload
+
+Terminal 2 (Frontend):
+Bash
+streamlit run app.py
+
+Navigate to the local URL provided by Streamlit to use the application.
+
+
+

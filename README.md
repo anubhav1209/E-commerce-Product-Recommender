@@ -80,3 +80,29 @@ streamlit run app.py
 ```
 
 Navigate to the local URL provided by Streamlit to use the application.
+
+
+
+■ System Architecture
+The system follows a decoupled, service-oriented architecture ensuring scalability and modularity. Workflow: 1. Streamlit frontend sends user_id to FastAPI backend. 2. Backend retrieves last-viewed product from SQLite. 3. Hybrid Engine applies “Head” (LLM brainstorming) and “Tail” (TF-IDF) strategies. 4. LLM summarizes and explains each recommendation. 5. JSON response sent to frontend for display.
+
+■ Core Features
+Hybrid Recommendation Engine: - “Head”: LLM-powered complementary product brainstorming. - “Tail”: TF-IDF-based similar product filtering. - Combined for diversity and relevance. LLM Integration (Groq + Llama 3.1): - Summarization: Condenses verbose product descriptions. - Explanation: Generates user-friendly reasoning for each recommendation.
+
+■ Key Learnings & Challenges
+Challenge: Google Cloud Gemini API errors (404 Model Not Found) despite proper setup. Solution: Pivoted to Groq API — reliable, fast, and easy to integrate.
+
+-- Learning: Iterative refinement through multiple testing cycles led to improved accuracy and diversity.
+
+■ Future Improvements
+- Add Collaborative Filtering using Surprise library. - Incorporate demographics for personalized results. - Integrate Redis caching to reduce API latency. - Enhance Streamlit UI with filters and dark mode.
+  
+■ Tech Stack
+- Frontend: Streamlit - Backend: FastAPI - Database: SQLite - AI/LLM: Llama 3.1 via Groq API ML: TF-IDF, - Cosine Similarity Language: Python Architecture: Modular, Service-Oriented
+
+■ Key Takeaways
+- Integrated LLMs into a practical full-stack application. - Overcame real-world API and infrastructure challenges. - Designed a hybrid recommender system balancing intelligence and diversity. - Developed prompt engineering skills for AI UX.
+  
+■ Final Reflection
+“This project taught me to engineer AI systems that not only predict but communicate. It’s about merging technical precision with empathy — the essence of intelligent design.”
+

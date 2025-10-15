@@ -42,6 +42,7 @@ This project is a complete, full-stack application that provides intelligent, pe
 ```bash
 git clone <your-repository-url>
 cd product-recommender
+```
 
 **2  Create and activate a virtual environment:**
 ```bash
@@ -50,28 +51,32 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 # On macOS/Linux
 source venv/bin/activate
+```
 
 **3. Install dependencies:**
 ```bash
 pip install -r requirements.txt
+```
 
 **4. Add API Key:**
+```bash
 Get a free API key from Groq.
 Paste the key into the API_KEY variable inside api/llm_handler.py
-
+```
 **5. Seed the database:**
+```bash
 python seed_database.py
-
+```
 **6. Run the Application:**
+
 Terminal 1 (Backend):
-Bash
+```bash
 python -m uvicorn api.main:app --reload
+```
 
 Terminal 2 (Frontend):
-Bash
+```bash
 streamlit run app.py
+```
 
 Navigate to the local URL provided by Streamlit to use the application.
-
-
-

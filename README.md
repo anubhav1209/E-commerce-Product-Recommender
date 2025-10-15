@@ -4,9 +4,9 @@ This project is a complete, full-stack application that provides intelligent, pe
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
-*(This is where you would embed a GIF or link to a short Loom/YouTube video of your Streamlit app in action)*
+*https://youtu.be/zN-oOIDIQXU*
 
 
 ---

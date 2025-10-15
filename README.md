@@ -4,7 +4,7 @@ This project is a complete, full-stack application that provides intelligent, pe
 
 ---
 
-##  Live Demo
+##  Demo Video
 
 *https://youtu.be/zN-oOIDIQXU*
 
